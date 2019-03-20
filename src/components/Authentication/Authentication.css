@@ -1,0 +1,17 @@
+.title-logo { 
+    width: 50%; 
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex 
+}
+
+.mini-logo {
+    font-size: 1.8rem;
+    text-align: center;
+    font-family: 'Pacifico Regular';
+    color: white; 
+    justify-content: center;
+    align-items: center;
+    display: flex 
+}
