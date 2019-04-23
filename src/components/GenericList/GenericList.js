@@ -28,7 +28,7 @@ class GenericList extends React.Component {
 
   render() {
     
-    const { list, classes } = this.props;
+    const { list = [], classes } = this.props;
     const Item = this.props.item;
 
     return (

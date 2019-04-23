@@ -1,53 +1,13 @@
 import React from 'react'
 //Icons
-import { FiGrid } from 'react-icons/fi';
-import { FiUserCheck } from 'react-icons/fi';
-import { FiSettings } from 'react-icons/fi';
-import { FiClipboard } from 'react-icons/fi';
-import { FiList } from 'react-icons/fi';
 import ListItemWithIcon from './ListItemWithIcon';
+import {drawerAppIconList, drawerAppOptions} from './DrawerAppListUtil'
 
 const styles = {
     fontSize: {
         fontSize: '22px'
     }
 }
-
-const iconList = {
-    dashboard: FiGrid,
-    applicants: FiUserCheck,
-    settings: FiSettings,
-    template: FiClipboard,
-    topics: FiList
-}
-
-const options = [
-    {
-        name: 'Dashboard',
-        variant: 'dashboard',
-        path: '/'
-    },
-    {
-        name: 'Applicants',
-        variant: 'applicants',
-        path: '/applicants'
-    },
-    {
-        name: 'Settings',
-        variant: 'settings',
-        path: '/settings'
-    }
-    // {
-    //     name: 'Template',
-    //     variant: 'template',
-    //     path: '/template'
-    // },
-    // {
-    //     name: 'Topics',
-    //     variant: 'topics',
-    //     path: '/topics'
-    // }
-]
 
 class AppDrawerList extends React.Component {
     _handleClick = option => {
@@ -56,10 +16,10 @@ class AppDrawerList extends React.Component {
     render () {
         return (
             <React.Fragment>
-                {options.map((option, index) => (
+                {drawerAppOptions.map((option, index) => (
                         <ListItemWithIcon
                             iconStyles={styles.fontSize}
-                            iconList={iconList}
+                            iconList={drawerAppIconList}
                             key={index} 
                             name={option.name} 
                             variant={option.variant} 

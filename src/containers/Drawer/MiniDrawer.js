@@ -47,12 +47,25 @@ class MiniDrawer extends React.Component {
                             <div style={{ display: 'flex', flexDirection: 'row', width: '100%', justifyContent: 'center' }}>
                                 {
                                     this.state.open ?
-                                        (<div style={{ justifyContent: 'center', width: '100%', display: 'flex', alignItems: 'center' }}>
-                                            <Typography style={{ fontFamily: 'Pacifico Regular', fontSize: '1.8rem', fontWeight: 'normal' }} component="h4" variant="h4">{this.state.open ? 'Tessty' : 'Te'}</Typography>
+                                        (<div style={{ justifyContent: 'center', width: '100%', display: 'flex', alignItems: 'center'}}>
+                                            <Typography
+                                                style={{
+                                                    fontFamily: 'Pacifico',
+                                                    fontSize: '1.8rem',
+                                                    fontWeight: 'normal'
+                                                }}
+                                                component="h4"
+                                                variant="h4">{this.state.open ? 'Xoi' : 'Xo'}</Typography>
                                         </div>) :
                                         (<div style={{ cursor: 'pointer' }} onClick={this.handleDrawer}>
                                             <div style={{ textAlign: 'center' }}>
-                                                <Typography style={{ fontFamily: 'Pacifico Regular', fontSize: '1.5rem', fontWeight: 'normal' }} variant="h4">Te</Typography>
+                                                <Typography 
+                                                style={{ 
+                                                    fontFamily: 'Pacifico',
+                                                    fontSize: '1.5rem',
+                                                    fontWeight: 'normal'
+                                                }}
+                                                variant="h4">X</Typography>
                                             </div>
                                         </div>)
                                 }

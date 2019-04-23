@@ -6,7 +6,7 @@
 
 
 @font-face {
-  font-family: 'Pacifico Regular';
+  font-family: 'Pacifico';
   font-style: normal;
   font-weight: 400;
   src:url('../public/fonts/Pacifico-Regular.ttf') format('truetype'),
@@ -107,7 +107,7 @@ body {
   border: 1px dashed #616161;
   width: 500px;
   padding: 50px 50px 35px 50px;
-  border-radius: 20px;
+  border-radius: 5px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   /* background: linear-gradient(to right, #333541, #303A4E); */
   background: none;
@@ -203,4 +203,23 @@ background: #9E9E9E;
 
 .dialog-height {
   height: 650px;
+}
+
+/* Custom table */
+.custom-table {
+  display: flex;
+  flex-direction: row;
+  margin: 1.5px 0;
+  padding: 5px 0;
+  border: 0.5px solid gray;
+  border-radius: 5px; 
+}
+
+
+.row-table {
+  cursor: pointer;
+}
+
+.row-table:hover {
+  background-color: #676c77;
 }

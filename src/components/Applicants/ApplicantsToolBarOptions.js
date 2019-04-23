@@ -1,12 +1,9 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import { FiSearch, FiPlus } from 'react-icons/fi';
 import InputBase from '@material-ui/core/InputBase';
-import { Button, Fab } from '@material-ui/core';
-import CustomToolBar from '../CustomToolBar/CustomToolBar';
+import { Button } from '@material-ui/core';
 
 class ApplicantsToolBarOptions extends React.Component {
 
@@ -19,7 +16,7 @@ class ApplicantsToolBarOptions extends React.Component {
     render() {
         const { classes } = this.props;
         return (
-           <React.Fragment>
+            <React.Fragment>
                 <div className={classes.grow} />
                 <div className={classes.search}>
                     <div className={classes.searchIcon}>

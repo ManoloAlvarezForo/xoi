@@ -5,11 +5,8 @@ import { LOGIN_MUTATION, SIGNUP_MUTATION } from './AuthenticationMutations';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-
 import { FiLock } from 'react-icons/fi';
 import { FiMail } from 'react-icons/fi';
-import { FiUser } from 'react-icons/fi';
-
 import { FiFacebook } from 'react-icons/fi';
 import { FiTwitter } from 'react-icons/fi';
 import { IoLogoGoogle } from "react-icons/io";
@@ -37,7 +34,6 @@ class Authentication extends React.Component {
             login,
             email,
             password,
-            repeatPassword,
             name
         } = this.state;
 
@@ -45,31 +41,15 @@ class Authentication extends React.Component {
             <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
                 <div style={{ display: 'flex', flexDirection: 'row' }}>
                     <div className="title-logo">
-                        <Typography style={{ fontFamily: 'Pacifico Regular', fontSize: '7rem', fontWeight: 'normal' }} component="h4" variant="h4" gutterBottom>Tessty</Typography>
+                        <Typography style={{ fontFamily: 'Pacifico', fontSize: '7rem', fontWeight: 'normal' }} component="h4" variant="h4" gutterBottom>Xoi</Typography>
                     </div>
                     <div className="auth-container" style={{ height: '100%' }}>
                         <div className="form-container" style={{ flexDirection: 'column', display: 'flex' }}>
                             <div>
                                 <div style={{ textAlign: 'center', fontSize: '2rem', margin: '60px 0' }} className="mv3">
-                                    {
-                                        login ? <Typography component="h4" variant="h4" gutterBottom>Welcome</Typography> : <Typography component="h4" variant="h4" gutterBottom>Sign up</Typography>
-                                    }
+                                    <Typography component="h4" variant="h4" gutterBottom>Welcome</Typography>
                                 </div>
                                 <div className="space custom-input" style={{ display: 'flex', flexDirection: 'column', margin: '20px 0' }}>
-                                    {!login && (
-                                        <div style={{ display: 'flex', flexDirection: 'row' }}>
-                                            <div style={{ margin: '0 12px', display: 'flex', alignItems: 'center' }}>
-                                                <FiUser style={{ fontSize: '24px', color: 'gray' }} />
-                                            </div>
-                                            <TextField style={{ margin: '10px 0', width: '100%' }}
-                                                value={name}
-                                                onChange={e => this.setState({ name: e.target.value })}
-                                                label="Name"
-                                                variant="outlined"
-                                            />
-                                        </div>
-
-                                    )}
                                     <div style={{ display: 'flex', flexDirection: 'row' }}>
                                         <div style={{ margin: '0 12px', display: 'flex', alignItems: 'center' }}>
                                             <FiMail style={{ fontSize: '24px', color: 'gray' }} />
@@ -85,7 +65,7 @@ class Authentication extends React.Component {
                                         <div style={{ margin: '0 12px', display: 'flex', alignItems: 'center' }}>
                                             <FiLock style={{ fontSize: '24px', color: 'gray' }} />
                                         </div>
-                                        <TextField style={{ margin: '10px 0', width: '100%', borderRadius: '50%' }}
+                                        <TextField style={{ margin: '10px 0', width: '100%', borderRadius: '5px' }}
                                             value={password}
                                             onChange={e => this.setState({ password: e.target.value })}
                                             label="Password"
@@ -93,21 +73,6 @@ class Authentication extends React.Component {
                                             variant="outlined"
                                         />
                                     </div>
-                                    {!login && (
-                                        <div style={{ display: 'flex', flexDirection: 'row' }}>
-                                            <div style={{ margin: '0 12px', display: 'flex', alignItems: 'center' }}>
-                                                <FiLock style={{ fontSize: '24px', color: 'gray' }} />
-                                            </div>
-                                            <TextField style={{ margin: '10px 0', width: '100%', borderRadius: '50%' }}
-                                                value={repeatPassword}
-                                                onChange={e => this.setState({ repeatPassword: e.target.value })}
-                                                label="Repeat Password"
-                                                type="password"
-                                                variant="outlined"
-                                            />
-                                        </div>
-
-                                    )}
                                 </div>
                                 <div style={{ display: 'flex', flexDirection: 'row' }}>
                                     <Mutation
@@ -118,7 +83,7 @@ class Authentication extends React.Component {
                                     >
                                         {mutation => (
                                             <Button variant="contained" color="secondary" size="large" style={{ marginLeft: 'auto', color: 'white' }} onClick={mutation}>
-                                                {login ? 'LOGIN' : 'CREATE ACCOUNT'}
+                                                LOGIN
                                             </Button>
                                         )}
                                     </Mutation>
@@ -126,9 +91,6 @@ class Authentication extends React.Component {
                                 </div>
                             </div>
                             <div style={{ display: 'flex', flexDirection: 'column', marginTop: 'auto' }}>
-                                <div onClick={() => this.setState({ login: !login })} style={{ margin: '30px 0', textAlign: 'center', cursor: 'pointer' }}>
-                                    <Typography variant="subtitle1" gutterBottom>{login ? 'Don\'t have an account yet? Sign up.' : 'Already have an account? Login.'}</Typography>
-                                </div>
                                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
                                     <IconButton onClick={() => console.log('Authentication with other account pressed.')} style={{ color: '#3A589E' }} aria-label="Register with Facebook">
                                         <FiFacebook />
